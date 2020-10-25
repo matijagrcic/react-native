@@ -17,6 +17,11 @@
 
 [Installation](https://github.com/react-native-maps/react-native-maps/blob/master/docs/installation.md)
 
+[Android Maps Utilities](https://mvnrepository.com/artifact/com.google.maps.android/android-maps-utils)
+
+[Google APIs for Android](https://developers.google.com/android/guides/releases)
+
+
 ```xml
 <meta-data
         android:name="com.google.android.geo.API_KEY"
