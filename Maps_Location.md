@@ -21,6 +21,9 @@
 
 [Google APIs for Android](https://developers.google.com/android/guides/releases)
 
+[MapView Methods](https://github.com/react-native-maps/react-native-maps/blob/master/docs/mapview.md#methods)
+
+[Visual Explanation animateToRegion](https://stackoverflow.com/questions/36685372/how-to-zoom-in-out-in-react-native-map/36688156#36688156)
 
 ```xml
 <meta-data
@@ -44,21 +47,25 @@
 
 > Uses the recommended `Google Location Services API`.
 
+```bash
+npm install react-native-geolocation-service
+```
+
 [Examples](https://github.com/Agontuk/react-native-geolocation-service/tree/master/example)
 
 ```js
-if (Platform.OS !== 'android') {
+if (Platform.OS !== "android") {
   Geolocation.requestAuthorization();
 } else {
   try {
     const granted = await PermissionsAndroid.request(
       PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
       {
-        title: '',
-        message: '',
-        buttonNeutral: 'Ask Me Later',
-        buttonNegative: 'Cancel',
-        buttonPositive: 'OK',
+        title: "",
+        message: "",
+        buttonNeutral: "Ask Me Later",
+        buttonNegative: "Cancel",
+        buttonPositive: "OK",
       }
     );
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
@@ -67,6 +74,23 @@ if (Platform.OS !== 'android') {
   } catch (error) {}
 }
 ```
+
+info.plist
+
+```txt
+NSLocationWhenInUseUsageDescription
+NSLocationAlwaysUsageDescription
+NSLocationAlwaysAndWhenInUseUsageDescription
+```
+
+AndroidManifest.xml
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
+
+Ref: [Setup](https://github.com/Agontuk/react-native-geolocation-service/blob/master/docs/setup.md)
 
 ## React Native Geolocation
 

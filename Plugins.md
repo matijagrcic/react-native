@@ -115,3 +115,36 @@ npm i react-native-modalize react-native-gesture-handler
 ```
 
 [Documentation](https://jeremybarbet.github.io/react-native-modalize/#/)
+
+# React Native Safe Area View
+
+[react-native-safe-area-view](https://github.com/react-navigation/react-native-safe-area-view)
+
+```js
+import { useSafeArea } from ‘react-native-community/react-native-safe-area-view’;
+
+const insets = useSafeArea();
+return <View style={{ paddingTop: insets.top }} />; //can also [forceInset](https://github.com/react-navigation/react-native-safe-area-view#forceinset)
+
+```
+
+Ref: [SafeAreaView react-navigation to fix iPhone X design issue](https://medium.com/@maheshnandam/use-safeareaview-from-react-navigation-to-fix-iphone-x-design-issue-ba531a9181d)
+Ref: [SafeAreaView](https://reactnative.dev/docs/safeareaview)
+
+# React Native Safe Area Context
+
+> Works on Android and Web!
+
+[react-native-safe-area-context](https://github.com/th3rdwave/react-native-safe-area-context)
+
+```bash
+npm install react-native-safe-area-context
+```
+
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+```js
+function App() {
+  return <SafeAreaProvider>...</SafeAreaProvider>;
+}
+```
