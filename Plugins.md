@@ -148,3 +148,22 @@ function App() {
   return <SafeAreaProvider>...</SafeAreaProvider>;
 }
 ```
+
+# React Native Floating Bubble
+
+> A simple Facebook Chat Head like bubble for react native.
+
+```bash
+npm install react-native-floating-bubble --save
+```
+
+```js
+import {
+  showFloatingBubble,
+  hideFloatingBubble,
+  requestPermission,
+} from "react-native-floating-bubble";
+
+// Show Floating Bubble
+showFloatingBubble().then(() => console.log("Floating Bubble Added"));
+```
