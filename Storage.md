@@ -1,8 +1,6 @@
-AsyncStorage.clear()
-errors on iOS but not Android.
+`AsyncStorage.clear()` errors on iOS but not Android.
 
-AsyncStorage.getAllKeys().then(AsyncStorage.multiRemove)
-errors on Android but not iOS.
+`AsyncStorage.getAllKeys().then(AsyncStorage.multiRemove)` errors on Android but not iOS.
 
 ```jsx
 import { Platform } from "react-native";
@@ -19,4 +17,4 @@ if (asyncStorageKeys.length > 0) {
 }
 ```
 
-https://medium.com/@richardzhanguw/storing-and-retrieving-objects-using-asyncstorage-in-react-native-6bb1745fdcdd
+[Storing and Retrieving Objects using AsyncStorage in React Native](https://medium.com/@richardzhanguw/storing-and-retrieving-objects-using-asyncstorage-in-react-native-6bb1745fdcdd)
