@@ -2,11 +2,9 @@
 
 > Detox is built from the ground up for native mobile and has deep first-class support for React Native apps.
 
-> Designed most specifically for React Native, speed and stability, knows when the app is idle (special support for RN idle synchronization)
+> Designed most specifically for React Native, speed and stability, knows when the app is idle (special support for React Native idle synchronization)
 
-> Detox only supports running tests on iOS simulators. Physical iOS devices are not supported [Ref](https://github.com/wix/Detox/issues/95)
-
-Actively worked on: [Ref](https://github.com/wix/Detox/pull/2198)
+> Detox only supports running tests on iOS simulators. Physical iOS devices are not supported ([Ref-1](https://github.com/wix/Detox/issues/95) [Ref-2](https://github.com/wix/Detox/pull/2198))
 
 [![Detox: tackling the flakiness of mobile automation - Viktorija Sujetaitė](https://img.youtube.com/vi/4rU0IGEt6OQ/0.jpg)](https://www.youtube.com/watch?v=4rU0IGEt6OQ)
 
@@ -34,18 +32,18 @@ it("Second test", async () => {
 
 _Detox Pros_
 
-made by Wix for React Native  
-Detox is way faster than Appium or any other third-party tool as it syncs with the app (gray box testing - connection between tests and internal processes)
+- made by Wix for React Native
+- Detox is way faster than Appium or any other third-party tool as it syncs with the app (gray box testing - connection between tests and internal processes)
 
 > Gray box drivers are developed by Google — EarlGrey for iOS and Espresso for Android.
 
-works in sync with the app. Not so flaky.  
-integrated easily in any React Native app.  
-The initial cost and efforts are much less than any other tools.
+- works in sync with the app. Not so flaky.
+- integrated easily in any React Native app.
+- The initial cost and efforts are much less than any other tools.
 
 _Detox Cons_
 
-No Real Testing for iOS
+- No Real Testing for iOS (can't currently use AWS Device Farm)
 
 ## Screenshots
 
@@ -61,11 +59,11 @@ No Real Testing for iOS
 
 > Detox Recorder is a utility for recordings steps for a Detox test as you use your app in Simulator. After recording the test, add expectations that check if interface elements are in the expected state.
 
-![Detox Recorder](https://github.com/wix/DetoxRecorder/blob/master/Documentation/Resources/Presentation.gif "Detox Recorder")
+![Detox Recorder](./testing/detox_recorder.gif "Detox Recorder")
 
 # Detox Perfecto
 
-[Perfecto Detox Integration](https://developers.perfectomobile.com/display/PD/Detox)
+[Perfecto Detox Integration](https://developers.perfectomobile.com/display/PD/Detox)  
 [Perfecto Detox Samle](https://github.com/PerfectoMobileSA/PerfectoDetoxSample)
 
 # Pefecto Quantum
@@ -86,9 +84,12 @@ _This disables the 'layout-only view removal' optimization for this view!_
 
 accessibilityLabel (Android)
 
-assessible={false} - so all the elements are findable by Appium
+```jsx
+//so all the elements are findable by Appium
+accessible = { false };
+```
 
-## Testing React Native Apps with Appium | HeadSpin Webinar
+### Testing React Native Apps with Appium | HeadSpin Webinar
 
 [![Testing React Native Apps with Appium | HeadSpin Webinar](https://img.youtube.com/vi/Rs_4kyqQlU4/0.jpg)](https://www.youtube.com/watch?v=Rs_4kyqQlU4)
 
@@ -137,44 +138,44 @@ Detox
 
 # Testing Loop
 
-Engineers - unit tests, mocked E2E
+Engineers - unit tests, mocked E2E  
 QA - production E2E, scenarios
 
 # Talks
 
-## React Native EU 2019: Vojtech Novak - Real World e2e Testing With Detox
+### React Native EU 2019: Vojtech Novak - Real World e2e Testing With Detox
 
 [![React Native EU 2019: Vojtech Novak - Real World e2e Testing With Detox](https://img.youtube.com/vi/_neMz2_6u20/0.jpg)](https://www.youtube.com/watch?v=_neMz2_6u20)
 
-## Detox: tackling the flakiness of mobile automation - Viktorija Sujetaitė
+#### Detox: tackling the flakiness of mobile automation - Viktorija Sujetaitė
 
 [![Detox: tackling the flakiness of mobile automation - Viktorija Sujetaitė](https://img.youtube.com/vi/4rU0IGEt6OQ/0.jpg)](https://www.youtube.com/watch?v=4rU0IGEt6OQ)
 
-## Testing React Native Apps with Appium | HeadSpin Webinar
+### Testing React Native Apps with Appium | HeadSpin Webinar
 
 [![Testing React Native Apps with Appium | HeadSpin Webinar](https://img.youtube.com/vi/Rs_4kyqQlU4/0.jpg)](https://www.youtube.com/watch?v=Rs_4kyqQlU4)
 
-## Detox: Tackling the Flakiness of Mobile Automation by Viktorija Sujetaitė
+### Detox: Tackling the Flakiness of Mobile Automation by Viktorija Sujetaitė
 
 [![Detox: Tackling the Flakiness of Mobile Automation by Viktorija Sujetaitė](https://img.youtube.com/vi/d0ZlKebGGm8/0.jpg)](https://www.youtube.com/watch?v=d0ZlKebGGm8)
 
-## Why the h# should I use Appium with ReactNative? - Wim Selles | AppiumConf 2018
+### Why the h# should I use Appium with ReactNative? - Wim Selles | AppiumConf 2018
 
 [![Why the h# should I use Appium with ReactNative? - Wim Selles | AppiumConf 2018](https://img.youtube.com/vi/10Zzlf5DmSI/0.jpg)](https://www.youtube.com/watch?v=10Zzlf5DmSI)
 
-## Chain React 2018: Detox: A year in. Building it, Testing with it by Rotem Mizrachi-Meidan
+### Chain React 2018: Detox: A year in. Building it, Testing with it by Rotem Mizrachi-Meidan
 
 [![Chain React 2018: Detox: A year in. Building it, Testing with it by Rotem Mizrachi-Meidan](https://img.youtube.com/vi/aMheT1qL5Lk/0.jpg)](https://www.youtube.com/watch?v=aMheT1qL5Lk)
 
-## Detox — Graybox End-to-End Tests and Automation Library for React Native by Tal Kol aka @koltal
+### Detox — Graybox End-to-End Tests and Automation Library for React Native by Tal Kol aka @koltal
 
 [![Detox — Graybox End-to-End Tests and Automation Library for React Native by Tal Kol aka @koltal](https://img.youtube.com/vi/Ndof_lgJmx8/0.jpg)](https://www.youtube.com/watch?v=Ndof_lgJmx8)
 
-## Detox: Graybox End to End Tests and Automation Library for Mobile Apps - Rotem Mizrachi-Meidan
+### Detox: Graybox End to End Tests and Automation Library for Mobile Apps - Rotem Mizrachi-Meidan
 
 [![Detox: Graybox End to End Tests and Automation Library for Mobile Apps - Rotem Mizrachi-Meidan](https://img.youtube.com/vi/qiRJT5Eig3g/0.jpg)](https://www.youtube.com/watch?v=qiRJT5Eig3g)
 
-## Rotem Mizrachi-Meidan: Detox — Graybox E2E Tests Library for React Native – ReactNext 2017
+### Rotem Mizrachi-Meidan: Detox — Graybox E2E Tests Library for React Native – ReactNext 2017
 
 [![Rotem Mizrachi-Meidan: Detox — Graybox E2E Tests Library for React Native – ReactNext 2017](https://img.youtube.com/vi/GgFFeI70PWw/0.jpg)](https://www.youtube.com/watch?v=GgFFeI70PWw)
 
