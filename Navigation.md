@@ -9,3 +9,15 @@
 ```bash
 npm install @react-navigation/material-top-tabs react-native-tab-view
 ```
+
+# Navigation Options
+
+_Root Navigator_ - used to switch between major navigation flows of the app, consists of
+
+- auth flow - registration, login, etc
+- main flow - uses Main Navigator
+
+_Main Navigator_ - displays an auth flow or other user flows
+
+Strongly typed navigators `createStackNavigator<Type>`  
+Would prefer if we use MobX State Tree store(s) to handle state rather than navigation params
