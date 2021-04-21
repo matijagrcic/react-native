@@ -40,6 +40,9 @@ _Detox Pros_
 - works in sync with the app. Not so flaky.
 - integrated easily in any React Native app.
 - The initial cost and efforts are much less than any other tools.
+- parallel test execution on both iOS and Android [Run multiple instances of a single AVD concurrently](https://developer.android.com/studio/releases/emulator#concurrent-avd)
+
+- supports WebViews on Android [18.7.0](https://github.com/wix/Detox/releases/tag/18.7.0)
 
 _Detox Cons_
 
@@ -60,6 +63,8 @@ _Detox Cons_
 > Detox Recorder is a utility for recordings steps for a Detox test as you use your app in Simulator. After recording the test, add expectations that check if interface elements are in the expected state.
 
 ![Detox Recorder](./testing/detox_recorder.gif "Detox Recorder")
+
+[![Detox Recorder](testing/detox_recorder.jpg)](https://github.com/wix/DetoxRecorder/blob/master/Documentation/Resources/Presentation.gif)
 
 # Detox Perfecto
 
