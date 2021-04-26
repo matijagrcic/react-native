@@ -8,6 +8,7 @@
   - [React Native Maps Directions](#react-native-maps-directions)
 - [TypeScript and Google Maps](#typescript-and-google-maps)
 - [Parse Google Maps Address_Components](#parse-google-maps-address_components)
+  - [Apps](#apps)
 
 # Packages
 
@@ -133,3 +134,15 @@ const address = address_components.reduce((seed, { long_name, types }) => {
 ```
 
 [How to parse google maps Address components. (geocoder response)](https://medium.com/@almestaadmicadiab/how-to-parse-google-maps-address-components-geocoder-response-774d1f3375d)
+
+## Apps
+
+How to spoof your location on Android
+
+- Download a GPS spoofing app
+- Enable Developer options
+- Select mock location app
+- Spoof your location
+
+[Fake GPS GO Location Spoofer Free](https://play.google.com/store/apps/details?id=com.incorporateapps.fakegps.fre)
+[Fake GPS location](https://play.google.com/store/apps/details?id=com.lexa.fakegps)

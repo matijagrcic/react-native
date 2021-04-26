@@ -6,7 +6,7 @@
 
 > State is stored in an immutable, structurally shared tree.
 
-> Business logic removed from the UI (views are passive)
+> Business logic removed from the UI (views are passive) (decouple domain logic and stare from UI)
 > Provides a structure for communication  
 > Embrace composition and reactivity  
 > Relay on the computed properties not on the model
@@ -19,15 +19,39 @@
 > A good model makes it easier to deal with reality
 
 > State is not just data but identities and relations
+> Separates consumption of data and changing of state
 
-Mobx is like a spreadsheet  
-Observables - spreadsheet's data cells that have values  
-Actions - the act of changing the values of spreadsheet's data cells  
-Computed Value - formulas and charts that can be derived from the data cells and other formulas  
-Reaction - drawing the output of a data cell or a formula
+> Everything that can be derived from state should be derived. Automatically
+
+> Break into smaller components if not fast enough
+
+> With observable data we know _what changed_ and _where it is relevant_ resulting in code
+> which is straight forward to read and write, smart optimized rendering and easy separation of concerns
+
+> State requires mutability - it's impossible to build a meaningful application without mutability
+> Control mutability and side-effects in an organized way (state management)
+
+> Observable objects are as a collection of streams, one stream per property
+
+> Use hooks for local state (if it's not needed anywhere outside the component)
+
+Mobx is like a spreadsheet
+
+- _Observables_ - spreadsheet's data cells that have values (state than can be changed over time)
+- _Actions_ - the act of changing the values of spreadsheet's data cells (interactions that change state)
+- _Computed Values_ - formulas and charts that can be derived from the data cells and other formulas (values that can be derived)
+- _Reactions_ - drawing the output of a data cell or a formula (side effects that should respond to state changes)
 
 `observer` - turn components into reactive components
 `inject` - connects components to provided stores
+
+## Mobx compared to Angular/Vue/Knockout
+
+Independent solution (use with anything)
+Distinct concepts: Side effect and derived values
+No change detection but change propagation
+Synchronous scheduling (helps with debugging)
+Optimally sorted dependency tree for guaranteed glitch-free, minimal amount of computations
 
 ## Tree
 
@@ -91,9 +115,7 @@ const cartEntry = types.model({
 cartEntry.book = bookStore.books[0]; //normalization done behind the scenes  and reference management
 ```
 
-![Feature Comparison](mobx/features-comparison.jpg)
-
-![Feature Comparison 1](mobx/features-comparison-1.jpg)
+![Feature Comparison](mobx/features-comparison-2.jpg)
 
 ## Stores
 
@@ -146,6 +168,87 @@ recorder.replay(store.books[0]); //atomic commit of all the changes the user mad
 import { getEnv } from "mobx-state-tree";
 ```
 
+# Comparison
+
+React Context - single event per context  
+Redux - global event, but selecting relevant parts  
+MobX - event per property, selection is automatic (subscribed to each individual property)
+
+React state - component
+Redux - single store
+MobX - user defined objects/classes
+
+> Both Redux and MobX have decouple state from UI layer
+
+> Most bugs happen because poor references management - staleness bugs (store id reference not the object reference, identity or value)
+
+# How does MobX works
+
+- Wrap properties with getter and setter - tracks every interaction with an object
+- Store running function in a stack
+- Getters register observers
+- Setters notify observers
+- MobX optimizes dependency graph (small as possible, least amount of computations)
+
+> Transparent reactive programming
+
+- decoupling of producers and consumers of information
+- straightforward to write
+- optimized, minimal dependency tree
+
+# React but for Data
+
+> Both React and MST are contract based (only props, views and actions are exposed, internal state encapsulated, design and runtime type checking)
+
+Component - Type (React composes _Components_, Mobx composes _Types_)
+
+```js
+const House = () => (
+  <Door />
+  <Window>
+)
+
+const House = types.mode({
+  doors: Door,
+  windows: Window
+})
+```
+
+Props - Snapshot
+
+State - Volatile state
+
+Instance - Instance (React composes a tree of component instances, Mobx composes a tree of rich type instances)
+
+```js
+const instance = React.createElement(Component, props);
+const instance = Type.create(snapshot);
+```
+
+Context - Environment
+
+Reconciliation - Reconciliation (preserve internal state, performance)
+
+> Snapshots are immutable, structurally shared representation of entire state at a specific moment in time (GIT Commit)
+
+> JSON Patch - deltas describing updates that were applied to the tree (Git Patch, describes modifications from one commit to the next) (used for time travelling like Git Revert, Git Rebase)
+
+> Middleware - intercept action invocations (Git hook)
+
+# Asynchronous processes in MST
+
+Built in concept based on generators so middleware can run on every continuation
+
+```js
+//same semantics, slightly difference syntax
+async function - process(function*)
+```
+
+```js
+//same semantics, slightly difference syntax
+await -yield;
+```
+
 ## Talks
 
 ### Next generation state management - Michel Weststrate aka @mweststrate at @ReactEurope 2017
@@ -160,6 +263,10 @@ import { getEnv } from "mobx-state-tree";
 
 [![Introduction to MobX State Tree](https://img.youtube.com/vi/pPgOrecfcg4/0.jpg)](https://www.youtube.com/watch?v=pPgOrecfcg4)
 
+### Michel Weststrate: React, But For Data — ReactNext 2017
+
+[![Michel Weststrate: React, But For Data — ReactNext 2017](https://img.youtube.com/vi/xfC_xEA8Z1M/0.jpg)](https://www.youtube.com/watch?v=xfC_xEA8Z1M)
+
 ### Combining GraphQL + mobx-state-tree - Michel Weststrate (@mweststrate) @ReactEurope 2019
 
 [![Combining GraphQL + mobx-state-tree - Michel Weststrate (@mweststrate) @ReactEurope 2019](https://img.youtube.com/vi/Sq2M00vghqY/0.jpg)](https://www.youtube.com/watch?v=Sq2M00vghqY)
@@ -168,9 +275,21 @@ import { getEnv } from "mobx-state-tree";
 
 [![MobX State Tree React pure reactivity served](https://img.youtube.com/vi/HS9revHrNRI/0.jpg)](https://www.youtube.com/watch?v=HS9revHrNRI)
 
-### Chain React 2019 - Devlin Duldulao - Getting Started with Mobx Statetree
+### Chain React 2019 - Devlin Duldulao - Getting Started with Mobx State Tree
 
 [![Devlin Duldulao - Getting Started with Mobx Statetree](https://img.youtube.com/vi/jD6iCt-Qz5k/0.jpg)](https://www.youtube.com/watch?v=jD6iCt-Qz5k)
+
+### React Native EU 2019: Jamon Holmgren — Resolving the great state debate
+
+[![React Native EU 2019: Jamon Holmgren — Resolving the great state debate](https://img.youtube.com/vi/Wx9slbOTD6Q/0.jpg)](https://www.youtube.com/watch?v=Wx9slbOTD6Q)
+
+### Michel Weststrate — State management beyond the libraries
+
+[![Michel Weststrate — State management beyond the libraries](https://img.youtube.com/vi/JKaJ9r3xYN4/0.jpg)](https://www.youtube.com/watch?v=JKaJ9r3xYN4)
+
+### ReactiveConf 2018 - Michel Weststrate: State management beyond the libraries
+
+[![ReactiveConf 2018 - Michel Weststrate: State management beyond the libraries](https://img.youtube.com/vi/N2mSG28jADQ/0.jpg)](https://www.youtube.com/watch?v=N2mSG28jADQ)
 
 ### MobX - Statement Management with no Boilerplate - React Native London - March 2020
 
@@ -183,6 +302,42 @@ import { getEnv } from "mobx-state-tree";
 ### Michel Weststrate: MobX: The Quest For Immer Mutable State Management
 
 [![MobX: The Quest For Immer Mutable State Management](https://img.youtube.com/vi/ta8QKmNRXZM/0.jpg)](https://www.youtube.com/watch?v=ta8QKmNRXZM)
+
+### Michel Weststrate — MobX and the unique symbiosis of predictability and speed
+
+[![Michel Weststrate — MobX and the unique symbiosis of predictability and speed](https://img.youtube.com/vi/NBYbBbjZeX4/0.jpg)](https://www.youtube.com/watch?v=NBYbBbjZeX4)
+
+### Michel Weststrate - Modern React and the case for Reactive State Management
+
+[![Michel Weststrate - Modern React and the case for Reactive State Management](https://img.youtube.com/vi/hHF33WGqQ5U/0.jpg)](https://www.youtube.com/watch?v=hHF33WGqQ5U)
+
+### Mattia Manzati - Advanced Types in TypeScript
+
+[![Mattia Manzati - Advanced Types in TypeScript](https://img.youtube.com/vi/dmBxWgVwJqs/0.jpg)](https://www.youtube.com/watch?v=dmBxWgVwJqs)
+
+### Flutter Reactive State Management With MOBX | Flutter Stream Day Season 1
+
+[![Flutter Reactive State Management With MOBX | Flutter Stream Day Season 1](https://img.youtube.com/vi/JYOBORVtJ50/0.jpg)](https://www.youtube.com/watch?v=JYOBORVtJ50)
+
+### Max Gallo - Reinventing MobX
+
+[![Max Gallo - Reinventing MobX](https://img.youtube.com/vi/P_WqKZxpX8g/0.jpg)](https://www.youtube.com/watch?v=P_WqKZxpX8g)
+
+### Advanced state management patterns with JavaScript & MobX with Michel Weststrate
+
+[![Advanced state management patterns with JavaScript & MobX with Michel Weststrate](https://img.youtube.com/vi/uWIT9M95mqQ/0.jpg)](https://www.youtube.com/watch?v=uWIT9M95mqQ)
+
+### Michel Weststrate: Real World MobX — ReactNext 2016
+
+[![Michel Weststrate: Real World MobX — ReactNext 2016](https://img.youtube.com/vi/Aws40KOx90U/0.jpg)](https://www.youtube.com/watch?v=Aws40KOx90U)
+
+### React Amsterdam Autumn Meetup: MobX and Large Scale React Applications
+
+[![React Amsterdam Autumn Meetup: MobX and Large Scale React Applications](https://img.youtube.com/vi/etnPDw5PKqg/0.jpg)](https://www.youtube.com/watch?v=etnPDw5PKqg)
+
+### Spreadsheets with MobX and react-virtualized
+
+[![Spreadsheets with MobX and react-virtualized](https://img.youtube.com/vi/VVLSzpxq_KU/0.jpg)](https://www.youtube.com/watch?v=VVLSzpxq_KU)
 
 # Courses
 
@@ -229,3 +384,6 @@ yarn mst-gql --format ts http://localhost:4000/graphql
 ```
 
 [![Combining GraphQL + mobx-state-tree](https://img.youtube.com/vi/Sq2M00vghqY/0.jpg)](https://www.youtube.com/watch?v=Sq2M00vghqY)
+
+> Stop defending all the choices you don't make. "Didn't try" is fine.
+> You have to learn to be able to use, but, you don't have to use to be able to learn. (read a bit, grab an idea, software engineering is all about patterns)
