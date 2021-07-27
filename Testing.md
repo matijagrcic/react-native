@@ -209,3 +209,9 @@ QA - production E2E, scenarios
 # Deprecated
 
 [Repackager](https://github.com/wix/react-native-repackager)
+
+# Visual Testing
+
+Take screenshots during Detox tests on CI and send them (embed the screenshots in html) to Percy for pixel diffs.
+
+[https://percy.io](https://percy.io)
