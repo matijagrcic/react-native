@@ -167,3 +167,113 @@ import {
 // Show Floating Bubble
 showFloatingBubble().then(() => console.log("Floating Bubble Added"));
 ```
+
+# React Native Config
+
+[react-native-config](https://github.com/luggit/react-native-config)
+
+[Setup Android](https://github.com/luggit/react-native-config#extra-step-for-android)
+
+[More info](https://www.bigbinary.com/blog/handling-environment-specific-configurations-in-react-native)
+
+[Handling environment specific configurations in React Native](https://www.bigbinary.com/blog/handling-environment-specific-configurations-in-react-native)
+
+react-native run-ios --scheme "Dev"
+react-native run-ios --scheme "Prod"
+Xcode goes to Product -> Schemes -> Manage Schemes... -> (Plus icon to create new scheme).
+You can manage the configurations choosing the Edit option.
+
+To list all available schemes for the project in your current directory
+xcodebuild -list
+xcodebuild -list -workspace ./MyApp.xcworkspace
+xcodebuild -list -project ./MyApp.xcodeproj
+
+# React Native FS
+
+[react-native-fs](https://github.com/itinance/react-native-fs)
+
+# React Native Clean Project
+
+[react-native-clean-project](https://github.com/pmadruga/react-native-clean-project)
+
+Deleted yarn.lock
+Deleted node_modules & pods
+yarn install
+pod install --repo-update
+
+# Async-Storage Flipper
+
+[rn-async-storage-flipper](https://github.com/Fausto95/rn-async-storage-flipper)
+
+## React Native Permissions
+
+```bash
+ npm install --save react-native-permissions
+```
+
+[react-native-permissions](https://github.com/zoontek/react-native-permissions#readme)
+
+[opensettings()](https://www.npmjs.com/package/react-native-permissions#opensettings)
+[Permissions statuses](https://www.npmjs.com/package/react-native-permissions#permissions-statuses)
+
+> On the old version, we have two methods: `canOpenSettings` and `openSettings`. Now we have only one that will be rejected if it's not possible. To perform an action when the app is getting focus back, you can use (AppState)[https://facebook.github.io/react-native/docs/appstate]
+
+# React Native Collapsible
+
+[react-native-collapsible](https://github.com/oblador/react-native-collapsible)
+
+# React Native Collapsible View
+
+[react-native-collapsible-view](https://github.com/Eliav2/react-native-collapsible-view)
+
+# React Native Collapsible List
+
+[react-native-collapsible-list](https://github.com/hamidhadi/react-native-collapsible-list)
+
+# React Native Version Check
+
+[react-native-version-check](https://github.com/kimxogus/react-native-version-check)
+
+```jsx
+useEffect(() => {
+  checkUpdateNeeded();
+}, []);
+
+const checkUpdateNeeded = async () => {
+  let updateNeeded = await VersionCheck.needUpdate();
+  if (updateNeeded.isNeeded) {
+    //Alert the user and direct to the app url
+  }
+};
+
+const latestVersion = await VersionCheck.getLatestVersion();
+const currentVersion = VersionCheck.getCurrentVersion();
+```
+
+# React Native Hold Menu
+
+[react-native-hold-menu](https://github.com/enesozturk/react-native-hold-menu)
+
+# React Native Calendars
+
+[react-native-calendars](https://github.com/wix/react-native-calendars)
+
+# React Native Bundle Visualizer
+
+[react-native-bundle-visualizer](https://github.com/IjzerenHein/react-native-bundle-visualizer)
+
+# React Native Cookies
+
+[react-native-cookies/cookies](https://github.com/react-native-cookies/cookies)
+
+# React Native Picker
+
+[react-native-picker/picker](https://github.com/react-native-picker/picker)
+
+# Shadow Generator
+
+[https://ethercreative.github.io/react-native-shadow-generator/](https://ethercreative.github.io/react-native-shadow-generator/)
+
+# React Native PDF
+
+[react-native-pdf](https://github.com/wonday/react-native-pdf)

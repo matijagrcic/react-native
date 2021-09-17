@@ -56,6 +56,8 @@ _Detox Cons_
 - Storing it as an e2e-test asset (i.e. the snapshot).
 - Using it as the point-of-reference for comparison against screenshots taken in consequent tests, from that point on.
 
+[The device Object](https://github.com/wix/detox/blob/master/docs/APIRef.DeviceObjectAPI.md#the-device-object)
+
 ## Detox Recorder
 
 [Detox Recorder](https://github.com/wix/DetoxRecorder)
@@ -190,6 +192,8 @@ QA - production E2E, scenarios
 
 [Testing React Native Apps with Appium](https://www.headspin.io/blog/appium/testing-react-native-apps-with-appium/)
 
+[React Native and Appium – Introduction to Test Automation](https://www.browserstack.com/guide/appium-react-native-for-automation)
+
 [Detox: Writing Stable Test Suites](https://medium.com/wix-engineering/detox-writing-stable-test-suites-372c9d537184)
 
 [Detox: The Unobtainable Test Stability (or is it?)](https://medium.com/wix-engineering/detox-the-unobtainable-test-stability-or-is-it-5f8cd765df1c)
@@ -205,6 +209,10 @@ QA - production E2E, scenarios
 [Detox and Appium complete comparison](https://github.com/Lumary2/University/blob/master/Detox_Appium_Comparison.pdf)
 
 [Detox: Gray Box End to End Testing Framework for Mobile Apps](https://hackernoon.com/detox-gray-box-end-to-end-testing-framework-for-mobile-apps-196ccd9564ce)
+
+[Detox: End-to-End Mobile UI Testing](https://bitbar.com/blog/detox-superfast-e2e-react-native-ui-testing/)
+
+[End-to-end testing in React Native with Detox](https://emasuriano.medium.com/end-to-end-testing-in-react-native-with-detox-53b27fe9168a)
 
 # Deprecated
 

@@ -32,3 +32,26 @@ function NavigationLottieView(props) {
   return <LottieView ref={lottieViewRef} {...props} />;
 }
 ```
+
+# On App Launch
+
+```jsx
+import { useAppState } from "@react-native-community/hooks";
+
+const onAppLaunchRef = React.useRef < boolean > false;
+const appState = useAppState();
+
+// code can be running when app state is not active, but `useEffect` with an empty dependency array will be running on first app launch.
+useEffect(() => {
+  if (onLaunchRef.current) {
+    return;
+  }
+
+  if (appState !== "active") {
+    return;
+  }
+
+  //do something here
+  onLaunchRef.current = true;
+}, []);
+```

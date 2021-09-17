@@ -79,6 +79,8 @@ Get-Process -ID (Get-NetTCPConnection -LocalPort 8088).OwningProcess
 npx react-devtools
 ```
 
+## Talks
+
 _Flipper: The Extensible DevTool Platform for React Native - Michel Weststrate aka @mweststrate_
 
 [![Flipper: The Extensible DevTool Platform for React Native - Michel Weststrate aka @mweststrate](https://img.youtube.com/vi/WltZTn3ODW4/0.jpg)](https://www.youtube.com/watch?v=WltZTn3ODW4)
@@ -86,3 +88,8 @@ _Flipper: The Extensible DevTool Platform for React Native - Michel Weststrate a
 _Flipper: The Extensible DevTool Platform for React Native - Michel Weststrate_
 
 [![Flipper: The Extensible DevTool Platform for React Native - Michel Weststrate](https://img.youtube.com/vi/bI1VEXVzNXs/0.jpg)](https://www.youtube.com/watch?v=bI1VEXVzNXs)
+
+## Issues
+
+[https://github.com/facebook/react-native/issues/31179](https://github.com/facebook/react-native/issues/31179)
+[Xcode 12.5 troubleshooting guide (RN 0.61/0.62/0.63/0.64)](https://github.com/facebook/react-native/issues/31480)

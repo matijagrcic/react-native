@@ -21,3 +21,24 @@ _Main Navigator_ - displays an auth flow or other user flows
 
 Strongly typed navigators `createStackNavigator<Type>`  
 Would prefer if we use MobX State Tree store(s) to handle state rather than navigation params
+
+## Resetting the navigation stack
+
+```jsx
+import { CommonActions } from "@react-navigation/native";
+
+navigation.dispatch(
+  CommonActions.reset({
+    index: 0,
+    routes: [
+      { name: "Home" },
+      {
+        name: "Profile",
+        params: { user: "johnSmith" },
+      },
+    ],
+  })
+);
+```
+
+[Navigation events - listeners prop on Screen](https://reactnavigation.org/docs/navigation-events/#listeners-prop-on-screen)

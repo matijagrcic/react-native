@@ -387,3 +387,11 @@ yarn mst-gql --format ts http://localhost:4000/graphql
 
 > Stop defending all the choices you don't make. "Didn't try" is fine.
 > You have to learn to be able to use, but, you don't have to use to be able to learn. (read a bit, grab an idea, software engineering is all about patterns)
+
+# Tips
+
+If the property was typed as Type | CreationType then all the properties unique to the Type (e.g. actions, views, etc) wouldn't be available when trying to use the property.
+
+To overcome this you have to either cast it to the instance type (since internally mst will convert the snapshot to an instance) or create the instance directly.
+
+[Ref](https://github.com/mobxjs/mobx-state-tree/issues/955)

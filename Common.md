@@ -126,15 +126,24 @@ Ref: [React Native: Managing App Permissions for iOS](https://medium.com/@rossbu
 
 > Linking to the app-settings: URL will jump directly into the app’s settings within the Settings app.
 
-## React Native Permissions
+## Get nested active route name
 
-```bash
- npm install --save react-native-permissions
+```jsx
+<Tab.Screen
+  name="Calendar"
+  component={CalendarModalWrapper}
+  options={({ route }) => ({
+    tabBarVisible: NavigationService.getActiveRouteName(route) === "Calendar",
+  })}
+/>;
+
+const getActiveRouteName = (route) => {
+  if (route.state) {
+    return getActiveRouteName(route.state.routes[route.state.index]);
+  }
+
+  return route.name;
+};
 ```
 
-[react-native-permissions](https://github.com/zoontek/react-native-permissions#readme)
-
-[opensettings()](https://www.npmjs.com/package/react-native-permissions#opensettings)
-[Permissions statuses](https://www.npmjs.com/package/react-native-permissions#permissions-statuses)
-
-> On the old version, we have two methods: `canOpenSettings` and `openSettings`. Now we have only one that will be rejected if it's not possible. To perform an action when the app is getting focus back, you can use (AppState)[https://facebook.github.io/react-native/docs/appstate]
+[Ref](https://github.com/react-navigation/react-navigation/issues/9113#issuecomment-764613614)

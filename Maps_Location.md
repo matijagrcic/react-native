@@ -9,6 +9,8 @@
 - [TypeScript and Google Maps](#typescript-and-google-maps)
 - [Parse Google Maps Address_Components](#parse-google-maps-address_components)
   - [Apps](#apps)
+    - [How to spoof your location on Android](#how-to-spoof-your-location-on-android)
+    - [How to spoof your location on iOS](#how-to-spoof-your-location-on-ios)
 
 # Packages
 
@@ -137,7 +139,7 @@ const address = address_components.reduce((seed, { long_name, types }) => {
 
 ## Apps
 
-How to spoof your location on Android
+### How to spoof your location on Android
 
 - Download a GPS spoofing app
 - Enable Developer options
@@ -146,3 +148,9 @@ How to spoof your location on Android
 
 [Fake GPS GO Location Spoofer Free](https://play.google.com/store/apps/details?id=com.incorporateapps.fakegps.fre)
 [Fake GPS location](https://play.google.com/store/apps/details?id=com.lexa.fakegps)
+
+### How to spoof your location on iOS
+
+[iFakeLocation](https://github.com/master131/iFakeLocation)
+
+[How to Use](https://github.com/master131/iFakeLocation#how-to-use)
