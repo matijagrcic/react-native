@@ -102,3 +102,71 @@ xcrun xcodebuild -list -project "./SomeApp.xcodeproj"
 # see what's building
 xcrun xcodebuild -showBuildSettings -scheme "Some" -project "./SomeApp.xcodeproj"
 ```
+
+# Debugging
+
+When your device is connected to your computer with a cable and you Build + Run your app, your device will try to debug.
+Debugging is only permitted for Development profiles.
+
+-If you build + run with a Development Profile + Development Signing Code, everything will be OK
+Shake your iOS device and Reload
+
+-If you build + run with an AppStore Distribution profile + Distribution Signing Code, the app will not even reach your device. This build is only for uploading to AppStore
+
+-If you build + run with an AdHoc Distribution profile + Distribution Signing Code, you'll get the "failed to get the task for process..." error, but the app will get installed in your device.
+Unplug the device and run the app from your device. It's running in distribution environment.
+
+```bash
+fastlane run register_device udid:"" name:""
+match development --force_for_new_devices
+match adhoc --force_for_new_devices
+```
+
+```ruby
+ lane :register_a_device do
+    register_devices(
+      devices: {
+        "name": "device UDID",
+        "name": "device UDID",
+      })
+    refresh_profiles
+  end
+
+  lane :refresh_profiles do
+    match(
+      type: "development",
+      force: true)
+    match(
+      type: "adhoc",
+      force: true)
+  end
+```
+
+```ruby
+lane :add_device do
+      device_name = prompt(text: "Enter the device name: ")
+      device_udid = prompt(text: "Enter the device UDID: ")
+      device_hash = {}
+      device_hash[device_name] = device_udid
+      register_devices(
+        devices: device_hash
+      )
+    refresh_profiles
+  end
+
+  # A helper lane for refreshing provisioning profiles.
+  lane :refresh_profiles do
+    match(
+      force_for_new_devices: true
+   )
+  end
+
+```
+
+> When you do _force_ or _force_for_new_devices_ it updates the existing profile
+
+
+# Install XCode command line tools
+
+xcode-select --install
+xcode-select -p

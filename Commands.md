@@ -49,3 +49,17 @@ brew install ios-deploy or  npm install -g ios-deploy
 react-native run-ios --device "John’s iPhone"
 react-native run-ios --udid XXXX --configuration Release
 ```
+
+### iOS see device logs
+
+```bash
+brew install libimobiledevice
+idevice_id --list // list available device UDIDs
+idevicesyslog -u <device udid>
+```
+
+[libimobiledevice](https://libimobiledevice.org/)
+
+> A cross-platform FOSS library written in C to communicate with iOS devices natively.
+
+For Windows and Android [libimobiledevice-win32](https://github.com/libimobiledevice-win32/imobiledevice-net/releases)

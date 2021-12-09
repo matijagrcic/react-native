@@ -373,6 +373,10 @@ end
 
 > Spaceship - communicates with Apple (iTunes connect, Apple Developer portal, API Xcode uses)
 
+[https://spaceship.airforce/](https://spaceship.airforce/)
+
+[https://github.com/fastlane/fastlane/tree/master/spaceship](https://github.com/fastlane/fastlane/tree/master/spaceship)
+
 > Boarding - Instantly create a simple signup page for TestFlight beta testers.
 
 [https://github.com/fastlane/boarding#readme](https://github.com/fastlane/boarding#readme)
@@ -380,6 +384,18 @@ end
 [https://appetize.io/](https://appetize.io/)
 
 > Run native mobile apps in your browser
+
+# Screenshots
+
+[https://docs.fastlane.tools/getting-started/android/screenshots/](https://docs.fastlane.tools/getting-started/android/screenshots/)
+[https://docs.fastlane.tools/getting-started/ios/screenshots/](https://docs.fastlane.tools/getting-started/ios/screenshots/)
+
+# Commands
+
+```
+fastlane deliver download_metadata
+fastlane deliver download_screenshots
+```
 
 ## Talks
 
