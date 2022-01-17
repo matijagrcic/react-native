@@ -54,6 +54,10 @@ lane :appstore do
 end
 ```
 
+[Make Fastlane Snapshot Work with React Native](https://fanchenbao.medium.com/make-fastlane-snapshot-work-with-react-native-babd5c5b0cee)
+
+[Make Fastlane Screengrab Work with React Native](https://fanchenbao.medium.com/make-fastlane-screengrab-work-with-react-native-da14f7138920)
+
 ### Automatic Deployment
 
 - Version bump

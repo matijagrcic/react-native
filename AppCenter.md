@@ -32,6 +32,12 @@ _Configure_
 - Distribute to different groups/stores
 - Status badges
 
+[I have connected to the wrong Bitbucket account. How can I re-connect to the correct one?](https://intercom.help/appcenter/en/articles/1339668-i-have-connected-to-the-wrong-bitbucket-account-how-can-i-re-connect-to-the-correct-one?utm_content=article_1339668)
+
+> Keep in mind that if you connect to a new account, you will lose all the build configuration and previous builds for ALL the apps configured with the previous account.
+
+Go to https://bitbucket.org/account/ > Access Management (Oauth) > Revoke App Center token then reconnect with desired account.
+
 # Talks
 
 ## React Native EU 2019: Nick de Jesus - Continuous Integration With Microsoft App Center

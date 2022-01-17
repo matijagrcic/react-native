@@ -58,6 +58,38 @@ _Detox Cons_
 
 [The device Object](https://github.com/wix/detox/blob/master/docs/APIRef.DeviceObjectAPI.md#the-device-object)
 
+```js
+const { execSync } = require("child_process");
+
+const SCREENSHOT_OPTIONS = {
+  timeout: 10000,
+  killSignal: "SIGKILL",
+};
+
+let screenshotIndex = 0;
+
+export const takeScreenshot = () => {
+  screenshotIndex += 1;
+  const fileName = `screenshot-${screenshotIndex}.png`;
+  if (device.getPlatform() === "android") {
+    const fileAddress = `/sdcard/${fileName}`;
+    execSync(`adb shell screencap ${fileAddress}`, SCREENSHOT_OPTIONS);
+    execSync(
+      `adb pull ${fileAddress} $(pwd)/android/fastlane/metadata/android/en-US/images/phoneScreenshots/`,
+      SCREENSHOT_OPTIONS
+    );
+  } else {
+    const fileAddress = `$(pwd)/ios/screenshots/${fileName}`;
+    execSync(
+      `xcrun simctl io booted screenshot ${fileAddress}`,
+      SCREENSHOT_OPTIONS
+    );
+  }
+};
+```
+
+[Ref](https://medium.com/@mra.ghamkhar/automatic-screenshots-with-fastlane-detox-fe5f7e855e51)
+
 ## Detox Recorder
 
 [Detox Recorder](https://github.com/wix/DetoxRecorder)
@@ -73,6 +105,23 @@ _Detox Cons_
 [Perfecto Detox Integration](https://developers.perfectomobile.com/display/PD/Detox)  
 [Perfecto Detox Samle](https://github.com/PerfectoMobileSA/PerfectoDetoxSample)
 
+# Perfecto API
+
+[Repository Operations](https://help.perfecto.io/perfecto-help/content/perfecto/automation-testing/repository_operations-legacy.htm)
+[Perfecto integrations with fastlane](https://help.perfecto.io/perfecto-help/content/perfecto/integrations/fastlane.htm)
+
+```bash
+fastlane add_plugin perfecto
+perfecto(
+    perfecto_cloudurl: ENV["PERFECTO_CLOUDURL"],
+    perfecto_token: ENV["PERFECTO_TOKEN"],
+    perfecto_media_location: ENV["PERFECTO_MEDIA_LOCATION"],
+    file_path: ENV['GRADLE_APK_OUTPUT_PATH']
+  )
+```
+
+[PerfectoMobileSA/fastlane-plugin-perfecto)(https://github.com/PerfectoMobileSA/fastlane-plugin-perfecto)
+
 # Pefecto Quantum
 
 [Quantum Starter Kit](https://github.com/Perfecto-Quantum/Quantum-Starter-Kit)
@@ -80,6 +129,15 @@ _Detox Cons_
 # React Native testID and accessibility label
 
 [testID](https://reactnative.dev/docs/view#testid)
+[React-Native and unique identifiers](https://developers.perfectomobile.com/display/TT/React-Native+and+unique+identifiers)
+
+```jsx
+if (Platform.OS === "ios") {
+  return { testID: id };
+}
+
+return { accessibilityLabel: id };
+```
 
 > Used to locate this view in end-to-end tests.
 

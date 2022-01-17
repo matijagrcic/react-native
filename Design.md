@@ -54,6 +54,11 @@ _Density qualifier_
 - xxhdpi Resources for extra-extra-high-density (xxhdpi) screens (~480dpi).
 - xxxhdpi Resources for extra-extra-extra-high-density (xxxhdpi) uses (~640dpi).
 
+- MDPI = Non-Retina = 100% image
+- HDPI = 150% image
+- Retina = 200% image
+- XHDPI = 225% image
+
 [Ref](https://developer.android.com/training/multiscreen/screendensities#TaskUseDP)
 [Pixel Ratio](https://reactnative.dev/docs/pixelratio#methods)
 

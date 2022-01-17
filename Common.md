@@ -61,6 +61,16 @@ let hasNotch = DeviceInfo.hasNotch();
 
 > Internally to AsyncStorage, all keys you provide are prepended with a unique identifier to reference your application to segment storage needs between apps.
 
+> Storage stays local to the device, is unencrypted and goes away if you delete the app, but should be saved as part of your device's backups and persists during upgrades.
+
+> 6MB on Android, indefinite on iOS
+
+[Increasing Storage size](https://react-native-async-storage.github.io/async-storage/docs/advanced/db_size/)
+
+Add a `AsyncStorage_db_size_in_MB` property to your `android/gradle.properties`:
+
+`AsyncStorage_db_size_in_MB=10`
+
 [Extreme Optimization of AsyncStorage in React Native](https://medium.com/@Sendbird/extreme-optimization-of-asyncstorage-in-react-native-b2a1e0107b34)
 
 ```js

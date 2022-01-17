@@ -22,6 +22,8 @@ _Main Navigator_ - displays an auth flow or other user flows
 Strongly typed navigators `createStackNavigator<Type>`  
 Would prefer if we use MobX State Tree store(s) to handle state rather than navigation params
 
+[Type checking with TypeScript](https://reactnavigation.org/docs/typescript/)
+
 ## Resetting the navigation stack
 
 ```jsx
@@ -42,3 +44,13 @@ navigation.dispatch(
 ```
 
 [Navigation events - listeners prop on Screen](https://reactnavigation.org/docs/navigation-events/#listeners-prop-on-screen)
+
+```jsx
+type ParamList = {
+  Home: {
+    more: MoreProps;
+  };
+};
+
+const route = useRoute<RouteProp<ParamList, 'Home'>>();
+```
