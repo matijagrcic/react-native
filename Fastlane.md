@@ -104,6 +104,9 @@ cd android
 cd secure
 
 keytool -gen key -v keystore myapp-key.keystore -alias myapp-key-alias -keyalg RSA -keysize 2048 -validity 10000
+ 
+keytool -list -keystore myapp-key.keystore
+keytool -delete -noprompt -alias myapp-key-alias -keystore myapp-key.keystore
 
 #follow other prompts
 ```
@@ -380,6 +383,11 @@ end
 [https://appetize.io/](https://appetize.io/)
 
 > Run native mobile apps in your browser
+
+## Commands
+fastlane beta --env development  
+fastlane run validate_play_store_json_key json_key:./secure/someFile.json
+
 
 ## Talks
 
