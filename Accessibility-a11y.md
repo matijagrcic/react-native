@@ -206,6 +206,8 @@ Properties such as
 
 [eslint-plugin-react-native-a11y](https://github.com/FormidableLabs/eslint-plugin-react-native-a11y)
 
+> This library will validate and ensure correct usage of a11y props when they are in use, but it doesn't force you to implement the props every single time you use a `<Touchable />` or `<Pressable />` component.
+
 [Accessibility](https://reactnative.dev/docs/next/accessibility)
 
 ## Releases accessibility
