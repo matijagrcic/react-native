@@ -91,14 +91,39 @@ The Accessibility Conformance Report (ACR) based on the ITI VPAT® is the leadin
 
 [https://www.dhs.gov/publication/dhs-section-508-compliance-test-processes](https://www.dhs.gov/publication/dhs-section-508-compliance-test-processes)
 
+# Talkback
+
+[https://github.com/google/talkback](https://github.com/google/talkback)
+
+[Talkback Roles](https://github.com/google/talkback/blob/771de7cdbf55b6adb4ca4c64c27a52584f2337cc/compositor/src/main/java/com/google/android/accessibility/compositor/Compositor.java#L733)
+
+On Android, open `Settings > Accessibility > TalkBack` and turn TalkBack on.
+
+# VoiceOver
+
+With an iPhone, go to `Settings > General > Accessibility > VoiceOver`, or simply ask Siri to "Turn
+on VoiceOver."
+
+[Accessibility for UIKit](https://developer.apple.com/documentation/uikit/accessibility_for_uikit)
+
+> Make your UIKit apps accessible to everyone who uses iOS and tvOS.
+
+[UIAccessibilityTraits](https://developer.apple.com/documentation/uikit/uiaccessibilitytraits)
+
+> Set these traits to tell an assistive app how an accessibility element behaves or how to treat it.
+
+Accessibility in iOS is define by the `UIAccessibility` protocol which is implemented for all standard UIKit elements (UIView subclasses).
+
+The most important/used properties (but not all) are :
+
+- isAccessibilityElement: if set to yes, the view is the accessibility responsible for itself and all subviews (subview won’t be visible in accessibility)
+- accessibilityLabel: a localized string that defines the element (ex « details »)
+- accessibilityTraits: explain how your element reacts (like button, text, image, …)
+- accessibilityHint: a short description of the result action this element (« will show details »)
+
+> With no accessibility at all elements on the screen are all independent with no logic.
+
 # VoiceOver and TalkBack
-
-With an iPhone, go to Settings > General > Accessibility > VoiceOver, or simply ask Siri to "Turn
-on VoiceOver." When you're finished, you can ask her to "Turn off VoiceOver," and she will
-gladly oblige.
-
-On Android, open Settings > Accessibility > TalkBack and turn TalkBack on.
-When you're done, head back there to turn it off.
 
 **Labeling**
 
@@ -159,37 +184,27 @@ VoiceOver and Accessibility Inspector tool available via Xcode app
 
 [storybook-addon-a11y](https://github.com/storybooks/storybook/tree/master/addons/a11y)
 
+[Automate accessibility tests with Storybook](https://storybook.js.org/blog/automate-accessibility-tests-with-storybook/)
+
 # Tools
 
 [WCAG Accessibility Checklist](https://apps.apple.com/us/app/wcag-accessibility-checklist/id1130086539)
 
-# Lint checks
+[Accessibility Insights for Web & Android](https://github.com/microsoft/accessibility-insights-web#-accessibility-insights-for-web--android)
 
-In addition to ensuring the app meets its functional requirements by building tests, it's important that we also ensure our code has no structural problems by running the code through lint. The lint tool helps find poorly structured code that can impact the reliability and efficiency of the app and make the code harder to maintain.
+> Accessibility Insights for Android is a cross-platform desktop tool used for testing accessibility of Android applications.
 
-# Blogs
+[![Watch the video](https://img.youtube.com/vi/KuLVuv2yjHc/default.jpg)](https://www.youtube.com/watch?v=KuLVuv2yjHc)
 
-[A smartphone accessibility primer; or, how I learned to stop worrying and master mobile accessibilit](http://simplyaccessible.com/article/smartphone-a11y-primer-1/)
+[Accessibility Scanner](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en_US&gl=US)
 
-[React Native Accessibility: What, Why, and How?](https://www.callstack.com/blog/react-native-accessibility)
+[![Watch the video](https://img.youtube.com/vi/i1gMzQv0hWU/default.jpg)](https://www.youtube.com/watch?v=i1gMzQv0hWU)
 
-[React Native Android Accessibility Tips](https://www.callstack.com/blog/react-native-android-accessibility-tips)
+[Accessibility Inspector in Xcode](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)
 
-[Accessibility in React Native](https://www.netguru.com/blog/accessibility-in-react-native)
+[Accessibility Inspector](https://developer.apple.com/videos/play/wwdc2019/257/)
 
-[Accessibility in React Native Apps](https://levelup.gitconnected.com/accessibility-in-react-native-apps-f06d5469a453)
-
-[Mobile Screen Reader Testing](https://scottvinkle.me/blogs/work/mobile-screen-reader-testing)
-
-[Creating Accessible React Native Apps](https://scottvinkle.me/blogs/work/creating-accessible-react-native-apps)
-
-[VoiceOver vs. Talkback: My Time on the Other Side](https://www.applevis.com/blog/voiceover-vs-talkback-my-time-other-side)
-
-[Intro to the Accessibility Inspector Tool for iOS Native Apps](https://www.deque.com/blog/intro-accessibility-inspector-tool-ios-native-apps/)
-
-[iOS Accessibility: Getting Started](https://www.raywenderlich.com/6827616-ios-accessibility-getting-started#toc-anchor-001)
-
-[Accessibility in iOS with VoiceOver](https://medium.com/geekculture/accessibility-in-ios-ce09f6df992b)
+[Support Full Keyboard Access in your iOS app](https://developer.apple.com/videos/play/wwdc2021/10120/)
 
 # React Native
 
@@ -208,7 +223,15 @@ Properties such as
 
 > This library will validate and ensure correct usage of a11y props when they are in use, but it doesn't force you to implement the props every single time you use a `<Touchable />` or `<Pressable />` component.
 
+> In addition to ensuring the app meets its functional requirements by building tests, it's important that we also ensure our code has no structural problems by running the code through lint. The lint tool helps find poorly structured code that can impact the reliability and efficiency of the app and make the code harder to maintain.
+
 [Accessibility](https://reactnative.dev/docs/next/accessibility)
+
+# Detox
+
+Detox operates within the confines of the native world. Detox doesn't have access to the JS, nor operate at that level. Once an action or an expectation in Detox is run, it travels to the native world, where we observe the native view hierarchy.
+
+[Ref](https://github.com/wix/Detox/issues/2313#issuecomment-689647183)
 
 ## Releases accessibility
 
@@ -239,3 +262,27 @@ Properties such as
 [Tailor the VoiceOver experience in your data-rich apps](https://developer.apple.com/videos/play/wwdc2021/10121/)
 
 [Accessibility & Inclusion](https://developer.apple.com/videos/accessibility-inclusion)
+
+# Blogs
+
+[A smartphone accessibility primer; or, how I learned to stop worrying and master mobile accessibilit](http://simplyaccessible.com/article/smartphone-a11y-primer-1/)
+
+[React Native Accessibility: What, Why, and How?](https://www.callstack.com/blog/react-native-accessibility)
+
+[React Native Android Accessibility Tips](https://www.callstack.com/blog/react-native-android-accessibility-tips)
+
+[Accessibility in React Native](https://www.netguru.com/blog/accessibility-in-react-native)
+
+[Accessibility in React Native Apps](https://levelup.gitconnected.com/accessibility-in-react-native-apps-f06d5469a453)
+
+[Mobile Screen Reader Testing](https://scottvinkle.me/blogs/work/mobile-screen-reader-testing)
+
+[Creating Accessible React Native Apps](https://scottvinkle.me/blogs/work/creating-accessible-react-native-apps)
+
+[VoiceOver vs. Talkback: My Time on the Other Side](https://www.applevis.com/blog/voiceover-vs-talkback-my-time-other-side)
+
+[Intro to the Accessibility Inspector Tool for iOS Native Apps](https://www.deque.com/blog/intro-accessibility-inspector-tool-ios-native-apps/)
+
+[iOS Accessibility: Getting Started](https://www.raywenderlich.com/6827616-ios-accessibility-getting-started#toc-anchor-001)
+
+[Accessibility in iOS with VoiceOver](https://medium.com/geekculture/accessibility-in-ios-ce09f6df992b)
