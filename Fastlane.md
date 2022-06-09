@@ -54,6 +54,10 @@ lane :appstore do
 end
 ```
 
+[Make Fastlane Snapshot Work with React Native](https://fanchenbao.medium.com/make-fastlane-snapshot-work-with-react-native-babd5c5b0cee)
+
+[Make Fastlane Screengrab Work with React Native](https://fanchenbao.medium.com/make-fastlane-screengrab-work-with-react-native-da14f7138920)
+
 ### Automatic Deployment
 
 - Version bump
@@ -104,7 +108,7 @@ cd android
 cd secure
 
 keytool -gen key -v keystore myapp-key.keystore -alias myapp-key-alias -keyalg RSA -keysize 2048 -validity 10000
- 
+
 keytool -list -keystore myapp-key.keystore
 keytool -delete -noprompt -alias myapp-key-alias -keystore myapp-key.keystore
 
@@ -376,6 +380,10 @@ end
 
 > Spaceship - communicates with Apple (iTunes connect, Apple Developer portal, API Xcode uses)
 
+[https://spaceship.airforce/](https://spaceship.airforce/)
+
+[https://github.com/fastlane/fastlane/tree/master/spaceship](https://github.com/fastlane/fastlane/tree/master/spaceship)
+
 > Boarding - Instantly create a simple signup page for TestFlight beta testers.
 
 [https://github.com/fastlane/boarding#readme](https://github.com/fastlane/boarding#readme)
@@ -385,9 +393,18 @@ end
 > Run native mobile apps in your browser
 
 ## Commands
-fastlane beta --env development  
-fastlane run validate_play_store_json_key json_key:./secure/someFile.json
 
+```bash
+fastlane beta --env development
+fastlane run validate_play_store_json_key json_key:./secure/someFile.json
+fastlane deliver download_metadata
+fastlane deliver download_screenshots
+```
+
+# Screenshots
+
+[https://docs.fastlane.tools/getting-started/android/screenshots/](https://docs.fastlane.tools/getting-started/android/screenshots/)
+[https://docs.fastlane.tools/getting-started/ios/screenshots/](https://docs.fastlane.tools/getting-started/ios/screenshots/)
 
 ## Talks
 

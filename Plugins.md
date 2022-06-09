@@ -218,6 +218,8 @@ pod install --repo-update
 
 > On the old version, we have two methods: `canOpenSettings` and `openSettings`. Now we have only one that will be rejected if it's not possible. To perform an action when the app is getting focus back, you can use (AppState)[https://facebook.github.io/react-native/docs/appstate]
 
+[React Native: Managing App Permissions for iOS](https://rossbulat.medium.com/react-native-managing-app-permissions-for-ios-4204e2286598)
+
 # React Native Collapsible
 
 [react-native-collapsible](https://github.com/oblador/react-native-collapsible)
@@ -270,6 +272,24 @@ const currentVersion = VersionCheck.getCurrentVersion();
 
 [react-native-picker/picker](https://github.com/react-native-picker/picker)
 
+# React Native Picker Select
+
+[react-native-picker-select](https://github.com/lawnstarter/react-native-picker-select#react-native-picker-select)
+
+```tsx
+<Picker
+  onValueChange={onValueChange}
+  useNativeAndroidPickerStyle={false}
+  fixAndroidTouchableBug={true}
+  placeholder={{}}
+  items={items}
+  Icon={() => (
+    <Icon name="keyboard-arrow-down" size={32} color={theme.colors.primary} />
+  )}
+  {...props}
+/>
+```
+
 # Shadow Generator
 
 [https://ethercreative.github.io/react-native-shadow-generator/](https://ethercreative.github.io/react-native-shadow-generator/)
@@ -277,3 +297,51 @@ const currentVersion = VersionCheck.getCurrentVersion();
 # React Native PDF
 
 [react-native-pdf](https://github.com/wonday/react-native-pdf)
+
+# Retry Axios
+
+[retry-axios](https://github.com/JustinBeckwith/retry-axios#retry-axios)
+
+> Use Axios interceptors to automatically retry failed requests. Super flexible. Built in exponential backoff.
+
+# Google Maps Search Component for React Native
+
+[react-native-google-places-autocomplete](https://github.com/FaridSafi/react-native-google-places-autocomplete)
+
+```tsx
+<GooglePlacesAutocomplete
+  query={{
+    key: GOOGLE_PLACES_API_KEY,
+    language: "en",
+  }}
+  onPress={(data, details = null) => console.log(data)}
+  onFail={(error) => alert(error)}
+  textInputProps={{
+    InputComp: Input,
+    leftIcon: { type: "font-awesome", name: "chevron-left" },
+    errorStyle: { color: "red" },
+  }}
+/>
+```
+
+# React Native Autocomplete Dropdown
+
+[react-native-autocomplete-dropdown](https://github.com/onmotion/react-native-autocomplete-dropdown)
+
+# React Native Autocomplete Input
+
+[mrlaessig/react-native-autocomplete-input](https://github.com/mrlaessig/react-native-autocomplete-input#readme)
+
+# React Native View Shot
+
+[react-native-view-shot](https://github.com/gre/react-native-view-shot)
+
+```bash
+yarn add react-native-view-shot
+yarn add react-native-share
+yarn add react-native-fs
+```
+
+# Keychain/Keystore Access for React Native
+
+[oblador/react-native-keychain](https://github.com/oblador/react-native-keychain)
