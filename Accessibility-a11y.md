@@ -194,7 +194,7 @@ VoiceOver and Accessibility Inspector tool available via Xcode app
 
 > Accessibility Insights for Android is a cross-platform desktop tool used for testing accessibility of Android applications.
 
-[![Watch the video](https://img.youtube.com/vi/KuLVuv2yjHc/default.jpg)](https://www.youtube.com/watch?v=KuLVuv2yjHc)
+[![Introduction to Accessibility Insights for Android](https://img.youtube.com/vi/KuLVuv2yjHc/default.jpg)](https://www.youtube.com/watch?v=KuLVuv2yjHc)
 
 [Accessibility Scanner](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en_US&gl=US)
 
@@ -203,6 +203,12 @@ VoiceOver and Accessibility Inspector tool available via Xcode app
 [Accessibility Inspector in Xcode](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)
 
 [Accessibility Inspector](https://developer.apple.com/videos/play/wwdc2019/257/)
+
+[![Auditing your App with the Accessibility Inspector](https://img.youtube.com/vi/sqGSYGHJMVM/default.jpg)](https://www.youtube.com/watch?v=sqGSYGHJMVM)
+
+[![Accessibility Inspector Tutorial for iOS Native Mobile Apps](https://img.youtube.com/vi/EkG5_kWkqwE/default.jpg)](https://www.youtube.com/watch?v=EkG5_kWkqwE)
+
+[![Voice Over Labels | Accessibility | Swift 4, Xcode 10](https://img.youtube.com/vi/Vyqi_UQRwhI/default.jpg)](https://www.youtube.com/watch?v=Vyqi_UQRwhI)
 
 [Support Full Keyboard Access in your iOS app](https://developer.apple.com/videos/play/wwdc2021/10120/)
 
@@ -262,6 +268,8 @@ Detox operates within the confines of the native world. Detox doesn't have acces
 [Tailor the VoiceOver experience in your data-rich apps](https://developer.apple.com/videos/play/wwdc2021/10121/)
 
 [Accessibility & Inclusion](https://developer.apple.com/videos/accessibility-inclusion)
+
+[Deque Systems](https://www.youtube.com/user/DequeSystemsInc/videos)
 
 # Blogs
 
