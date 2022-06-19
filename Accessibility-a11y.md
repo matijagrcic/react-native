@@ -74,6 +74,12 @@ Three levels of conformance:
 
 > Divide the application into several parts and assign each developer a section to test then rotate the sections each time so that each developer will check something different every time. The developer will return to the first section and will be familiar with the entire application, which should also reduce the time needed for testing.
 
+[Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile](https://w3c.github.io/Mobile-A11y-TF-Note/)
+
+[Mobile Accessibility QA Testing Checklist](https://pauljadam.com/demos/mobilechecklist.html#utm_source=microassist&utm_medium=mobilapps&utm_campaign=Pt2)
+
+[What's new in WCAG 2.1, the web Accessibility Standard](https://www.davidmacd.com/blog/wcag-2.1-quick-guide.html)
+
 # VPAT
 
 The Accessibility Conformance Report (ACR) based on the ITI VPAT® is the leading global reporting format for assisting buyers and sellers in identifying information and communications technology (ICT) products and services with accessibility features. Version 2 of the VPAT was expanded to include the leading ICT accessibility standards: Section 508 (U.S.), EN 301 549 (EU), and W3C/WAI WCAG.
@@ -144,16 +150,7 @@ Both TalkBack and VoiceOver use a variety of touchscreen gestures to help users 
 
 > Android emulator doesn’t have the screen reader (TalkBack) app installed by default
 
-TalkBack and AccessibilityScanner
-
-VoiceOver and Accessibility Inspector tool available via Xcode app
-
-[Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile](https://w3c.github.io/Mobile-A11y-TF-Note/)
-[Mobile Accessibility QA Testing Checklist](https://pauljadam.com/demos/mobilechecklist.html#utm_source=microassist&utm_medium=mobilapps&utm_campaign=Pt2)
-
-[What's new in WCAG 2.1, the web Accessibility Standard](https://www.davidmacd.com/blog/wcag-2.1-quick-guide.html)
-
-[Apple Accessibility](https://www.youtube.com/playlist?list=PLIl2EzNYri0cLtSlZowttih25VnSvWITu)
+> VoiceOver and Accessibility Inspector tool available via Xcode app
 
 # Web
 
@@ -239,7 +236,7 @@ Detox operates within the confines of the native world. Detox doesn't have acces
 
 [Ref](https://github.com/wix/Detox/issues/2313#issuecomment-689647183)
 
-## Releases accessibility
+## React Native - releases focused on accessibility
 
 [Improved React Native Accessibility](https://github.com/facebook/react-native/projects/15)
 
