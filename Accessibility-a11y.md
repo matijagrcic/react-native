@@ -195,7 +195,7 @@ Both TalkBack and VoiceOver use a variety of touchscreen gestures to help users 
 
 [Accessibility Scanner](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en_US&gl=US)
 
-[![Watch the video](https://img.youtube.com/vi/i1gMzQv0hWU/default.jpg)](https://www.youtube.com/watch?v=i1gMzQv0hWU)
+[![Accessibility scanner - Accessibility on Android](https://img.youtube.com/vi/i1gMzQv0hWU/default.jpg)](https://www.youtube.com/watch?v=i1gMzQv0hWU)
 
 [Accessibility Inspector in Xcode](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)
 
